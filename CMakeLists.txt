@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.23)
-project(INFINITE-RUNNER VERSION 0.0.1
-                        LANGUAGES CXX)
+project(
+  INFINITE-RUNNER
+    VERSION 0.0.1
+    LANGUAGES CXX
+)
 
-find_package(raylib REQUIRED)
+find_package(raylib QUIET)
 
 add_executable(${PROJECT_NAME})
 
