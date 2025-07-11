@@ -19,8 +19,8 @@ echo "|************************INFINITE-RUNNER-BUILDER************************|"
 echo "[$currentStep/$totalSteps] Checking for presence:"
 echo "      mkdir -> Creating build directories;"
 echo "      mv -> Moving contents;"
-echo "      rm -> Removing temporary files."
-echo "      cd -> Moving between folders."
+echo "      rm -> Removing temporary files;"
+echo "      cd -> Moving between folders;"
 echo "      pwd -> Showing working directory."
 
 lineDelimiter="|***********************************************************************|"
@@ -61,7 +61,7 @@ do
   mkdir "build_$buildFolderSuffix" &> /dev/null
   if [ $? -eq 0 ]; then
     echo "[$currentStep.$helperStep/$totalSteps] Folder build_$buildFolderSuffix: STATUS [CREATED]"
-  elif [ $(ls | grep build_ | wc -w) -ne 1 ]; then
+  elif [ $(ls | grep build_ | wc -w) -ne 0 ]; then
     echo "[$currentStep.$helperStep/$totalSteps] Folder build_$buildFolderSuffix: STATUS [EXISTS]"
   else
     isValidStep=1
