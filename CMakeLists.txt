@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 3.23)
 project(INFINITE-RUNNER VERSION 0.0.1
                         LANGUAGES CXX)
+
 find_package(raylib REQUIRED)
+
 add_executable(${PROJECT_NAME})
+
 string(TOLOWER  "${PROJECT_NAME}-HEADERS" header_file_set)
+
 target_sources(
     ${PROJECT_NAME}
       PRIVATE
@@ -16,11 +20,13 @@ target_sources(
       PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
+
 target_link_libraries(
     ${PROJECT_NAME}
       PRIVATE
         -lraylib
 )
+
 target_compile_features(
     ${PROJECT_NAME}
       PRIVATE
